@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  wsl:
+    build: .
+    container_name: wsl
+    command: mix run --no-halt
+    environment:
+      - MIX_ENV=dev
+    ports:
+      - 4000:4000
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/wsl
